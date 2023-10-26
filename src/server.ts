@@ -1,5 +1,11 @@
-function nome(): void{
-  console.log("kaka");
-}
+import { fastify } from 'fastify'
 
-nome();
+const app = fastify()
+
+app.listen({ port: 3333 }, (err, address) => {
+  if (err) {
+    console.error()
+    process.exit(1)
+  }
+  console.log(`Serve listening on ${address}`)
+})
