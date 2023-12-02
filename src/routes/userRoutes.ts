@@ -1,5 +1,5 @@
 import { FastifyInstance } from 'fastify'
-import { UserController } from '../controllers'
+import { UserController } from '../presetation/controllers'
 
 export async function userRoutes(app: FastifyInstance) {
   app.get('/users', UserController.Show)
