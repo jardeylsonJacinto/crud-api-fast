@@ -1,4 +1,5 @@
 import { z } from 'zod'
+
 export const userValidation = z.object({
   name: z.string({
     required_error: 'Precisa adicionar um nome',
@@ -8,4 +9,11 @@ export const userValidation = z.object({
   password: z
     .string()
     .min(6, { message: 'A senha não pode ter menos que 6 caracteres' }),
+})
+
+export const tokenValidation = z.object({
+  email: z.string().email({ message: 'E-mail invalido' }),
+  password: z
+    .string({ required_error: 'não pode tá vazio' })
+    .min(1, { message: 'Senha vazia' }),
 })
